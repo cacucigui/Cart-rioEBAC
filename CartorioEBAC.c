@@ -136,6 +136,7 @@ int main()
 		printf("\t1- Registrar nomes\n\n");
 		printf("\t2- Consultar nomes\n\n");
 		printf("\t3- Apagar nomes\n\n");
+		printf("\t4- Sair do sistema\n\n"); 
 		printf("Opção: "); //Fim do menu
 
 		scanf("%d", &opcao); //Armazenando a escolha do usuário
@@ -144,9 +145,9 @@ int main()
 	
 		switch(opcao) //Início da seleção do menu
 		{
-			case 1:
+			case 1: //Iniciar se for essa opção
 			registro(); //Chamada de funções
-			break;
+			break; //Não prossegue se não for essa opção
 			
 			case 2:
 			consulta();
@@ -156,10 +157,16 @@ int main()
 			apagar();
 			break;
 			
-			default: 
-			printf("Essa opção não está disponível!\n\n"); 
-			system("pause");
+			case 4:
+			printf("Obrigado por utilizar o sistema!\n");
+			return 0; //Quebrar a função e sair do sistema
 			break;
+			
+			default: //Se não for nenhuma das opções
+			printf("Essa opção não está disponível!\n\n"); 
+			system("pause"); //Mnesagem fixa até o usuário decidir
+			break; //Não prossegue se não for essa opção
+			//Fim da seleção do menu
 		}
 	}	
 }
